@@ -7,17 +7,49 @@
 // 7. ao termino do jogo, o contador para
 // 8. devera haver um botao de mostrar tempos de jogo anteriores
 
-const cards = ['dog1.png', 'dog1.png', 'dog2.png', 'dog2.png', 'dog3.png', 'dog3.png', 'dog4.png', 'dog4.png', 'dog5.png', 'dog5.png', 'dog6.png', 'dog6.png', 'dog7.png', 'dog7.png', 'dog8.png', 'dog8.png']
-
+let cards = ['dog1.png', 'dog1.png', 'dog2.png', 'dog2.png', 'dog3.png', 'dog3.png', 'dog4.png', 'dog4.png', 'dog5.png', 'dog5.png', 'dog6.png', 'dog6.png', 'dog7.png', 'dog7.png', 'dog8.png', 'dog8.png']
+let gameBoard = document.getElementById('tabuleiro')
 
 function gameStart(){
     // let initialTime = new Date()
-    let gameBoard = document.getElementById('tabuleiro')
 
+    gameBoard.innerHTML = ``
     cards.forEach(card => {
         gameBoard.innerHTML += 
             `<div class="gameCard" data-value="${card}">
                 <img class="frontFace" src="img/${card}">
+                <img class="backFace turned" src="img/back.png">
             </div>`
-    });
+    })
+
+    setTimeout(() => {
+        shuffleCards()}, 2000)
+}
+
+function shuffleCards(){
+    cards.sort(()=> (Math.random() > .5) ? 1 : -1)
+
+    gameBoard.innerHTML = ``
+    cards.forEach(card => {
+        gameBoard.innerHTML += 
+            `<div class="gameCard" data-value="${card}">
+                <img class="frontFace" src="img/${card}">
+                <img class="backFace turned" src="img/back.png" onclick="turnCard()">
+            </div>`
+    })
+
+    let initialFront = document.getElementsByClassName('frontFace')
+    let initialBack = document.getElementsByClassName('backFace')
+    let initialCards = [...initialFront, ...initialBack]
+
+    setTimeout(() => {
+        for (let i = 0; i < initialCards.length; i++){
+            let card = initialCards[i];
+            card.classList.toggle('turned')
+        }
+    }, 1500)
+}
+
+function turnCard(){
+    
 }
