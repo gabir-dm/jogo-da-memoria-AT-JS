@@ -7,17 +7,17 @@
 // 7. ao termino do jogo, o contador para
 // 8. devera haver um botao de mostrar tempos de jogo anteriores
 
-let cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]
+const cards = ['dog1.png', 'dog1.png', 'dog2.png', 'dog2.png', 'dog3.png', 'dog3.png', 'dog4.png', 'dog4.png', 'dog5.png', 'dog5.png', 'dog6.png', 'dog6.png', 'dog7.png', 'dog7.png', 'dog8.png', 'dog8.png']
+
 
 function gameStart(){
-    let initialTime = new Date()
+    // let initialTime = new Date()
+    let gameBoard = document.getElementById('tabuleiro')
 
-cards.forEach (image => {
-    cardsHtml =+ `
-    <div class = "gameCard" data-value = "${image}">
-        <img class = "frontFace" src = "img/${image}">
-    </div>
-    `
-})
-
+    cards.forEach(card => {
+        gameBoard.innerHTML += 
+            `<div class="gameCard" data-value="${card}">
+                <img class="frontFace" src="img/${card}">
+            </div>`
+    });
 }
