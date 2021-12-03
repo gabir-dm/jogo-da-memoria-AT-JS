@@ -34,7 +34,7 @@ function shuffleCards(){
         gameBoard.innerHTML += 
             `<div class="gameCard" data-value="${card}">
                 <img class="frontFace" src="img/${card}">
-                <img class="backFace turned" src="img/back.png" onclick="turnCard()">
+                <img class="backFace turned" src="img/back.png">
             </div>`
     })
 
@@ -48,8 +48,23 @@ function shuffleCards(){
             card.classList.toggle('turned')
         }
     }, 1500)
+
+    initialCards.forEach(element => {
+        element.addEventListener('click', turnCard)
+    })
 }
 
+// function clickListeners(){
+//     let initialFront = document.getElementsByClassName('frontFace')
+//     let initialBack = document.getElementsByClassName('backFace')
+//     let initialCards = [...initialFront, ...initialBack]
+
+//     initialCards.forEach(element => {
+//         element.addEventListener('click', turnCard)
+//     })
+// }
+
+
 function turnCard(){
-    
+    console.log("clicky?")
 }
