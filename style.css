@@ -39,18 +39,6 @@ body {
   opacity: 0;
 }
 
-.backFace {
-  width: 80%;
-  position: relative;
-  top: -115px;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.backFace.turned {
-  opacity: 0;
-}
-
 #startBtn {
   padding: 15px 20px;
   background-color: #e274be;

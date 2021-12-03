@@ -18,29 +18,26 @@ function gameStart(){
         gameBoard.innerHTML += 
             `<div class="gameCard" data-value="${card}">
                 <img class="frontFace" src="img/${card}">
-                <img class="backFace turned" src="img/back.png">
             </div>`
     })
 
     setTimeout(() => {
-        shuffleCards()}, 2000)
+        shuffleCards()}, 3000)
 }
 
 function shuffleCards(){
+
     cards.sort(()=> (Math.random() > .5) ? 1 : -1)
 
     gameBoard.innerHTML = ``
-    cards.forEach(card => {
+    cards.forEach((card, i) => {
         gameBoard.innerHTML += 
             `<div class="gameCard" data-value="${card}">
                 <img class="frontFace" src="img/${card}">
-                <img class="backFace turned" src="img/back.png">
             </div>`
     })
 
-    let initialFront = document.getElementsByClassName('frontFace')
-    let initialBack = document.getElementsByClassName('backFace')
-    let initialCards = [...initialFront, ...initialBack]
+    let initialCards = document.getElementsByClassName('frontFace')
 
     setTimeout(() => {
         for (let i = 0; i < initialCards.length; i++){
@@ -49,22 +46,11 @@ function shuffleCards(){
         }
     }, 1500)
 
-    initialCards.forEach(element => {
-        element.addEventListener('click', turnCard)
+    let gameCard = document.querySelectorAll(".gameCard img")
+    
+    gameCard.forEach((card, i) => {
+        card.addEventListener("click", turnCard =>
+        card.classList.toggle('turned')
+        )
     })
-}
-
-// function clickListeners(){
-//     let initialFront = document.getElementsByClassName('frontFace')
-//     let initialBack = document.getElementsByClassName('backFace')
-//     let initialCards = [...initialFront, ...initialBack]
-
-//     initialCards.forEach(element => {
-//         element.addEventListener('click', turnCard)
-//     })
-// }
-
-
-function turnCard(){
-    console.log("clicky?")
 }
