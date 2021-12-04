@@ -11,6 +11,28 @@ body {
   flex-wrap: wrap;
 }
 
+#hud {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#startBtn {
+  padding: 15px 20px;
+  background-color: #e274be;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#startBtn:hover {
+  background-color: #d444a4;
+}
+
 #chrono {
   width: 130px;
   height: 50px;
@@ -28,6 +50,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+}
+
+#highscores {
+  margin-top: 20px;
 }
 
 .gameCard {
@@ -49,18 +75,4 @@ body {
 
 .frontFace.turned {
   opacity: 0;
-}
-
-#startBtn {
-  padding: 15px 20px;
-  background-color: #e274be;
-  color: #ffffff;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-#startBtn:hover {
-  background-color: #d444a4;
 }
