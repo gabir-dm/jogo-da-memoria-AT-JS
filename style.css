@@ -11,6 +11,18 @@ body {
   flex-wrap: wrap;
 }
 
+#chrono {
+  width: 130px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
 #tabuleiro {
   display: flex;
   flex-wrap: wrap;
