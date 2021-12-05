@@ -100,7 +100,7 @@ function turnCard(card){
     }
 
     card.target.classList.toggle('turned')
-    card.target.classList.add('check')
+    card.target.classList.add('selected')
     card.target.removeEventListener("click", turnCard)
     let turned = card.target.getAttribute('data-value')
     turnedCards.push(turned)
@@ -114,22 +114,32 @@ function turnCard(card){
             blockClicks = false
             turnedCards = []
 
+            let selectedCards = document.querySelectorAll("img.frontFace.selected")
+            selectedCards.forEach(card =>
+                card.classList.remove('selected')
+            )
+
             if(score === 8){
                 gameEnd()
             }
 
         } else {
+            let selectedCards = document.querySelectorAll("img.frontFace.selected")
 
-            // ------------- Not working!!! ------------------
-            // let checked = document.querySelectorAll(".check")
-            // checked.forEach(card =>
-            //     card.target.classList.toggle('turned'))
-            }
-            // blockClicks = false
+            selectedCards.forEach(card =>
+                setTimeout(() => {
+                    card.classList.remove('selected')
+                    card.addEventListener("click", turnCard)
+                    card.classList.toggle('turned')
+                    turnedCards = []
+                    blockClicks = false    
+                    selectedCards = []}
+                , 1500)
+            )
+        }
     }
 
 }
-
 
 function gameEnd(){
     window.clearInterval(interval)
