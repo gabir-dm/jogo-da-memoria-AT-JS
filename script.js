@@ -1,6 +1,7 @@
 let cards = ['dog1.png', 'dog1.png', 'dog2.png', 'dog2.png', 'dog3.png', 'dog3.png', 'dog4.png', 'dog4.png', 'dog5.png', 'dog5.png', 'dog6.png', 'dog6.png', 'dog7.png', 'dog7.png', 'dog8.png', 'dog8.png']
 let gameBoard = document.getElementById('tabuleiro')
 let chronometer = document.getElementById('chrono')
+let highscores = document.getElementById('scores')
 
 let blockClicks = false
 let score = 0
@@ -16,6 +17,7 @@ function gameStart(){
 
     gameBoard.innerHTML = ``
     window.clearInterval(interval)
+    score = 0
 
     cards.forEach(card => {
         gameBoard.innerHTML += 
@@ -131,4 +133,5 @@ function turnCard(card){
 
 function gameEnd(){
     window.clearInterval(interval)
+    highscores.innerHTML += `<li>${displayMinutes}:${displaySeconds}</li>`
 }
