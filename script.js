@@ -143,5 +143,7 @@ function turnCard(card){
 
 function gameEnd(){
     window.clearInterval(interval)
-    highscores.innerHTML += `<li>${displayMinutes}:${displaySeconds}</li>`
+    window.alert(`Parabéns! Seu tempo final é ${displayMinutes}:${displaySeconds}`)
+    let userName = window.prompt("Digite seu nome:")
+    highscores.innerHTML += `<li><strong>${userName}</strong> - ${displayMinutes}:${displaySeconds}</li>`
 }

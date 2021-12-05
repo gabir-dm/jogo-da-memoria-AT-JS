@@ -4,7 +4,7 @@ body {
 
 .container {
   margin: 20px auto;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,20 +45,53 @@ body {
   margin: 10px auto;
 }
 
+#game {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #tabuleiro {
   display: flex;
+  height: 800px;
+  width: 50%;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 }
 
 #highscores {
-  margin-top: 20px;
+  width: 30%;
+  height: 500px;
+  padding: 30px;
+  background-color: #d4e2ff;
+  border-radius: 15px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #3fa5f8;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: auto;
+}
+
+li {
+  color: #1a1a1a;
+  font-size: 1.5em;
 }
 
 .gameCard {
-  width: 150px;
-  height: 180px;
+  width: 20%;
+  height: 20%;
   margin: 10px;
   border: 4px solid #1a1a1a;
   border-radius: 15px;
