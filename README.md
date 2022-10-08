@@ -1,4 +1,4 @@
-# jogo-da-memoria-AT-JS
+# Card Matching Game
 
 A very simple card matching game created with HTML, CSS and Javascript made as a project for college.
 
